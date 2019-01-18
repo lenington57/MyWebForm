@@ -77,6 +77,8 @@
     <Content Include="Contacto.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\UsuarioWF.aspx" />
+    <Content Include="Resources\depositphotos_115969918-stock-illustration-add-user-icon-man-account.jpg" />
+    <Content Include="Resources\Usuario.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reportes\" />
-    <Folder Include="Resources\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
