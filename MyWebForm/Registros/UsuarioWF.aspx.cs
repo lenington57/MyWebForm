@@ -32,7 +32,7 @@ namespace MyWebForm.Registros
         {
             Usuario usuario = new Usuario();
 
-            usuario.UsuarioId = Convert.ToInt32(usuarioIdTextBox.Text);
+            usuario.UsuarioId = ToInt(usuarioIdTextBox.Text);
             usuario.Nombres = nombreTextBox.Text;
             usuario.NoTelefono = noTelefonoTextBox.Text;
             usuario.Email = emailTextBox.Text;
@@ -55,7 +55,7 @@ namespace MyWebForm.Registros
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
-            Usuario usuario = repositorio.Buscar(Convert.ToInt32(usuarioIdTextBox.Text));
+            Usuario usuario = repositorio.Buscar(ToInt(usuarioIdTextBox.Text));
             if (usuario != null)
             {
                 nombreTextBox.Text = usuario.Nombres;
@@ -89,7 +89,7 @@ namespace MyWebForm.Registros
             }
             else
             {
-                int id = Convert.ToInt32(usuarioIdTextBox.Text);
+                int id = ToInt(usuarioIdTextBox.Text);
                 usuario = repositorio.Buscar(id);
 
                 if (usuario != null)
@@ -118,7 +118,7 @@ namespace MyWebForm.Registros
         protected void eliminarutton_Click(object sender, EventArgs e)
         {
             BLL.Repositorio<Usuario> repositorio = new BLL.Repositorio<Usuario>();
-            int id = Convert.ToInt32(usuarioIdTextBox.Text);
+            int id = ToInt(usuarioIdTextBox.Text);
 
             var usuario = repositorio.Buscar(id);
 
