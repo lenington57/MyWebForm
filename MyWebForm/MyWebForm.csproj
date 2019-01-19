@@ -76,6 +76,7 @@
     <Content Include="Consultas\CUsuarioWF.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registros\UsuarioWF.aspx" />
     <Content Include="Resources\depositphotos_115969918-stock-illustration-add-user-icon-man-account.jpg" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
