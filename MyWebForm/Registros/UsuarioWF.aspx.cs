@@ -52,6 +52,22 @@ namespace MyWebForm.Registros
             return retorno;
         }
 
+        private bool HayErrores()
+        {
+            bool HayErrores = false;
+
+            string s = passwordTextBox.Text;
+            string ss = cpasswordTextBox.Text;
+            int comparacion = 0;
+            comparacion = String.Compare(s, ss);
+            if (comparacion != 0)
+            {
+                HayErrores = true;
+            }
+            
+            return HayErrores;
+        }
+
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
             Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
@@ -78,35 +94,40 @@ namespace MyWebForm.Registros
             Usuario usuario = new Usuario();
             bool paso = false;
 
-            //todo: validaciones adicionales
-            usuario = LlenaClase();
-
-            if (usuario.UsuarioId == 0)
-            {
-                paso = repositorio.Guardar(usuario);
-                Response.Write("<script>alert('Guardado');</script>");
-                Limpiar();
-            }
+            if (HayErrores())
+                Response.Write("<script>alert('Contraseñas no concuerdan');</script>");
             else
             {
-                int id = ToInt(usuarioIdTextBox.Text);
-                usuario = repositorio.Buscar(id);
+                //todo: validaciones adicionales
+                usuario = LlenaClase();
 
-                if (usuario != null)
+                if (usuario.UsuarioId == 0)
                 {
-                    paso = repositorio.Modificar(usuario);
-                    Response.Write("<script>alert('Modificado');</script>");
+                    paso = repositorio.Guardar(usuario);
+                    Response.Write("<script>alert('Guardado');</script>");
+                    Limpiar();
                 }
                 else
-                    Response.Write("<script>alert('Id no existe');</script>");
-            }
+                {
+                    int id = ToInt(usuarioIdTextBox.Text);
+                    usuario = repositorio.Buscar(id);
 
-            if (paso)
-            {
-                Limpiar();
+                    if (usuario != null)
+                    {
+                        paso = repositorio.Modificar(LlenaClase());
+                        Response.Write("<script>alert('Modificado');</script>");
+                    }
+                    else
+                        Response.Write("<script>alert('Id no existe');</script>");
+                }
+
+                if (paso)
+                {
+                    Limpiar();
+                }
+                else
+                    Response.Write("<script>alert('No se pudo guardar');</script>");
             }
-            else
-                Response.Write("<script>alert('No se pudo guardar');</script>");
 
         }
 

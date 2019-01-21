@@ -13,7 +13,7 @@ namespace MyWebForm.Consultas
 {
     public partial class CUsuarioWF : System.Web.UI.Page
     {
-        Expression<Func<Usuario, bool>> filtro;// = p => true;
+        Expression<Func<Usuario, bool>> filtro = p => true;
         Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
         public static List<Usuario> listUsuarios { get; set; }
 
@@ -22,24 +22,32 @@ namespace MyWebForm.Consultas
             listUsuarios = repositorio.GetList(x => true);
         }
 
+        private int ToInt(object valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor.ToString(), out retorno);
+
+            return retorno;
+        }
+
         protected void BuscarLinkButton_Click(object sender, EventArgs e)
         {
             int id = 0;
 
             switch (FiltroDropDownList.SelectedIndex)
             {
-                //    case 0://Todo
-                //        filtro = p => true && p.Fecha >= desde && p.Fecha <= hasta;
-                //        break;
-
-                case 0://UsuarioId
-                    id = Convert.ToInt32(CriterioTextBox.Text);
+                case 0://Todo
                     break;
 
-                case 1://Nombre
+                case 1://UsuarioId
+                    id = ToInt(CriterioTextBox.Text);
+                    filtro = p => p.UsuarioId == id;
+                    break;
+
+                case 2://Nombre
                     filtro = p => p.Nombres.Contains(CriterioTextBox.Text);
                     break;
-                case 2://Email
+                case 3://Email
                 filtro = p => p.Email.Contains(CriterioTextBox.Text);
                     break;
             }

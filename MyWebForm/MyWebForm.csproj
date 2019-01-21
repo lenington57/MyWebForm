@@ -81,6 +81,7 @@
     <Content Include="Registros\UsuarioWF.aspx" />
     <Content Include="Resources\depositphotos_115969918-stock-illustration-add-user-icon-man-account.jpg" />
     <Content Include="Resources\factura.jpg" />
+    <Content Include="Resources\icono-nuevo-usuario-png-4.png" />
     <Content Include="Resources\Usuario.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -135,6 +136,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Utilitarios\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

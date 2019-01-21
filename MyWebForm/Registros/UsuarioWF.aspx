@@ -3,18 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br>
-    <h5 align="center">Registro de Usuarios</h5>
+    <h5 class="display-4" style="font-weight: bold; background-color: #0000FF">Registro de Usuarios</h5>
     <div class="col-md-6 col-md-offset-3">
         <div class="container">
             <div class="form-group">
                 <asp:Label ID="Label1" runat="server" Text="UsuarioId"></asp:Label>
                 <asp:Button class="btn btn-primary" ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
-                <asp:TextBox class="form-control" ID="usuarioIdTextBox" placeholder="0" runat="server"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="usuarioIdTextBox" text="0" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>
-    <asp:Image ID="UsuarioImage" runat="server" Height="474px" ImageUrl="~/Resources/depositphotos_115969918-stock-illustration-add-user-icon-man-account.jpg" runat="server" Width="409px" AlternateText="Imagen no disponible" ImageAlign="right" />
+    <asp:Image ID="UsuarioImage" runat="server" Height="474px" ImageUrl="~/Resources/icono-nuevo-usuario-png-4.png" runat="server" Width="409px" AlternateText="Imagen no disponible" ImageAlign="right" />
     <div class="col-md-6 col-md-offset-3">
         <div class="container">
             <div class="form-group">
