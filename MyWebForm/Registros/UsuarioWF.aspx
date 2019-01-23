@@ -42,7 +42,7 @@
         <div class="container">
             <div class="form-group">
                 <asp:Label ID="Label5" runat="server" Text="Contraseña"></asp:Label>
-                <asp:TextBox class="form-control" ID="passwordTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="passwordTextBox" type="password" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
         <div class="container">
             <div class="form-group">
                 <asp:Label ID="Label6" runat="server" Text="Confirmar Contraseña"></asp:Label>
-                <asp:TextBox class="form-control" ID="cpasswordTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="cpasswordTextBox" type="password" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>

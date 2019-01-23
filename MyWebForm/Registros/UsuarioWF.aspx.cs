@@ -19,7 +19,7 @@ namespace MyWebForm.Registros
 
         private void Limpiar()
         {
-            usuarioIdTextBox.Text = " ";
+            usuarioIdTextBox.Text = "0";
             nombreTextBox.Text = " ";
             noTelefonoTextBox.Text = "";
             emailTextBox.Text = "";
@@ -62,9 +62,24 @@ namespace MyWebForm.Registros
             comparacion = String.Compare(s, ss);
             if (comparacion != 0)
             {
+                Response.Write("<script>alert('Contraseñas no concuerdan');</script>");
                 HayErrores = true;
             }
-            
+            if (String.IsNullOrWhiteSpace(nombreTextBox.Text))
+            {
+                Response.Write("<script>alert('Debe ingresar un Nombre');</script>");
+                HayErrores = true;
+            }
+            if (String.IsNullOrWhiteSpace(noTelefonoTextBox.Text))
+            {
+                Response.Write("<script>alert('Debe ingresar un Número de Teléfono');</script>");
+                HayErrores = true;
+            }
+            if (String.IsNullOrWhiteSpace(emailTextBox.Text))
+            {
+                Response.Write("<script>alert('Debe ingresar un Email');</script>");
+                HayErrores = true;
+            }
             return HayErrores;
         }
 
@@ -94,7 +109,7 @@ namespace MyWebForm.Registros
             bool paso = false;
 
             if (HayErrores())
-                Response.Write("<script>alert('Contraseñas no concuerdan');</script>");
+                Response.Write("<script>alert('Llene los Campos Correctamente');</script>");
             else
             {
                 //todo: validaciones adicionales
