@@ -84,7 +84,6 @@ namespace MyWebForm.Registros
             else
             {
                 Response.Write("<script>alert('Usuario no encontrado');</script>");
-
             }
         }
 
