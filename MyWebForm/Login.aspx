@@ -3,31 +3,51 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h5 class="display-4" style="font-weight: bold; background-color: #0000FF">Iniciar Sesión</h5>
-    <br>
-    <div class="form-group col-md-3">
-        <asp:Label ID="Label1" runat="server" Text="Email">Email</asp:Label>
-        <asp:TextBox ID="CriterioTextBox" AutoCompleteType="Disabled" class="form-control input-group" placeholder="micorreo@gmail.com" runat="server"></asp:TextBox>
-    </div>    
-    <asp:Image ID="UsuarioImage" runat="server" Height="510px" ImageUrl="~/Resources/factura.jpg" runat="server" Width="705px" AlternateText="Imagen no disponible" ImageAlign="right" />
-    <div class="col-md-3">
-        <asp:Label ID="Label2" runat="server" Text="Contraseña">Contraseña</asp:Label>
-        <asp:TextBox ID="TextBox1" AutoCompleteType="Disabled" class="form-control input-group" type="password" runat="server"></asp:TextBox>
-        <br>
-        <asp:Button class="form-control btn btn-primary col-sm-4 " ID="entrarButton" runat="server" Text="Entrar" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+    <div class="form-row justify-content-center">
+        <aside class="col-sm-4">
+            <br>
+            <br>
+            <div class="card">
+                <article class="card-body">
+                    <a href="" class="float-right btn btn-outline-primary">Registrarse</a>
+                    <h4 class="card-title mb-4 mt-1">Iniciar Sesión</h4>
+                    <form>
+                        <div class="form-group">
+                            <asp:Label ID="Label1" runat="server" Text="Label">Email</asp:Label>
+                            <asp:TextBox class="form-control" ID="emailTextBox" placeholder="micorreo@gmail.com" type="email" runat="server"></asp:TextBox>
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group">
+                            <a class="float-right" href="#">Olvidó su contraseña?</a>
+                            <asp:Label ID="Label2" runat="server" Text="Contraseña"></asp:Label>
+                            <asp:TextBox class="form-control" ID="passwordTextBox" placeholder="******" type="password" runat="server"></asp:TextBox>
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                    Guardar contraseña
+                                </label>
+                            </div>
+                            <!-- checkbox .// -->
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group">
+                            <asp:Button ID="iniciarSButton" type="submit" class="btn btn-primary btn-block" runat="server" Text="Iniciar Sesión" OnClick="iniciarSButton_Click" />
+                        </div>
+                        <!-- form-group// -->
+                    </form>
+                </article>
+            </div>
+            <!-- card.// -->
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </asp:Content>
 

@@ -7,11 +7,15 @@ using System.Web.UI.WebControls;
 using Entities;
 using DAL;
 using BLL;
+using System.Linq.Expressions;
 
 namespace MyWebForm.Registros
 {
     public partial class UsuarioWF : System.Web.UI.Page
     {
+        Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
+        Expression<Func<Usuario, bool>> filtrar = x => true;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -52,10 +56,22 @@ namespace MyWebForm.Registros
             return retorno;
         }
 
+        private bool ComprobarEmail()
+        {
+            bool paso = false;
+            filtrar = t => t.Email.Equals(emailTextBox.Text);
+            if (repositorio.GetList(filtrar).Count() != 0)
+            {
+                Response.Write("<script>alert('Este email ya existe');</script>");
+                paso = true;
+            }
+            return paso;
+        }
+
         private bool HayErrores()
         {
             bool HayErrores = false;
-
+            filtrar = t => t.Email.Equals(emailTextBox.Text);
             string s = passwordTextBox.Text;
             string ss = cpasswordTextBox.Text;
             int comparacion = 0;
@@ -78,6 +94,11 @@ namespace MyWebForm.Registros
             if (String.IsNullOrWhiteSpace(emailTextBox.Text))
             {
                 Response.Write("<script>alert('Debe ingresar un Email');</script>");
+                HayErrores = true;
+            }
+            if (repositorio.GetList(filtrar).Count() != 0)
+            {
+                Response.Write("<script>alert('Este email ya existe');</script>");
                 HayErrores = true;
             }
             return HayErrores;

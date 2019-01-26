@@ -46,6 +46,7 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
                         </li>
+                        <asp:Button ID="cerrarSesButton" class="btn btn-danger my-2 my-sm-0" type="submit" runat="server" Text="Cerrar Sesión" OnClick="cerrarSesButton_Click" />
                     </ul>
                 </div>
             </nav>

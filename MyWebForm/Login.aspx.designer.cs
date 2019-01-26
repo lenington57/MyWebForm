@@ -22,22 +22,13 @@ namespace MyWebForm {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// CriterioTextBox control.
+        /// emailTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CriterioTextBox;
-        
-        /// <summary>
-        /// UsuarioImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image UsuarioImage;
+        protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
         /// Label2 control.
@@ -49,21 +40,21 @@ namespace MyWebForm {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// TextBox1 control.
+        /// passwordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
         
         /// <summary>
-        /// entrarButton control.
+        /// iniciarSButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button entrarButton;
+        protected global::System.Web.UI.WebControls.Button iniciarSButton;
     }
 }
